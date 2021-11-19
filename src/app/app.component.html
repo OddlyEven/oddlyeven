@@ -1,0 +1,7 @@
+<header class="dark-background flex-row center">THIS IS A HEADER</header>
+<div class="main-content" role="main">
+  <app-preference-panel [preferences]="shapePreferences" (preferenceChange)="preferenceChanged($event)">
+  </app-preference-panel>
+  <app-snake-overlay [shapePreferences]="shapePreferences"></app-snake-overlay>
+</div>
+<footer>SOMETHING IS AFOOT</footer>
