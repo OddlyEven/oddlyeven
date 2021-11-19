@@ -10,8 +10,9 @@ export class Triangle extends Shape {
 
     const halfSize = this.shapeSize / 2;
     const xCount = Math.ceil(width / this.shapeSize) + 1;
+    const yCount = Math.ceil(height / (this.shapeSize / 1.25));
 
-    const screenTemplate = [...Array(Math.ceil(height / this.shapeSize)).keys()]
+    const screenTemplate = [...Array(yCount).keys()]
       .map((y) => {
         const yStart = y * this.shapeSize;
         const yEnd = ((y * this.shapeSize)) + this.shapeSize;

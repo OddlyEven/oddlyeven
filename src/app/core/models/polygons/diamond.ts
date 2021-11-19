@@ -9,7 +9,7 @@ export class Diamond extends Shape {
     const { width, height } = this.screenSize;
     const halfSize = this.shapeSize / 2;
     const xCount = Math.ceil(width / this.shapeSize) + 1;
-    const yCount = Math.ceil(height / (this.shapeSize / 2.5));
+    const yCount = Math.ceil(height / (this.shapeSize / 2.6));
 
     const screenTemplate = [...Array(yCount).keys()]
       .map((y) => {
