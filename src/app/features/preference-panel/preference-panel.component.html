@@ -1,0 +1,19 @@
+<div *ngIf="isVisible" class="pref-panel-container dark-background flex-col">
+  <div class="form-group">
+    <label for="shape-selector">Shape:</label>
+    <select id="shape-selector" [value]="selectedShape" (change)="shapeSelected($event)">
+      <option *ngFor="let shape of shapes">{{ shape }}</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="size-selector">Size:</label>
+    <select id="size-selector" [value]="selectedSize" (change)="sizeSelected($event)">
+      <option *ngFor="let n of sizeRange">{{ n }}</option>
+    </select>
+  </div>
+
+  <div class="flex-bottom">
+    <button (click)="preferencesChanged()">Repaint</button>
+  </div>
+</div>
