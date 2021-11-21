@@ -1,9 +1,14 @@
 <header class="dark-background flex-row">
   <a href="https://github.com/OddlyEven/oddlyeven" target="#">Github</a>
   <a href="https://www.linkedin.com/in/seanstreetmcp/" target="#">Linked In</a>
+  <div>
+    <input type="checkbox" [checked]="showPrefPanel" (change)="showPrefPanel = !showPrefPanel">
+    <label>Show Preference Panel</label>
+  </div>
 </header>
 <div class="main-content" role="main">
-  <app-preference-panel [preferences]="shapePreferences" (preferenceChange)="preferenceChanged($event)">
+  <app-preference-panel [isVisible]="showPrefPanel" [preferences]="shapePreferences"
+    (preferenceChange)="preferenceChanged($event)">
   </app-preference-panel>
   <app-snake-overlay [shapePreferences]="shapePreferences"></app-snake-overlay>
 </div>
