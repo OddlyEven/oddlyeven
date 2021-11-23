@@ -33,7 +33,7 @@ export class SnakeOverlayComponent implements AfterViewInit {
     const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
 
     svg.setAttribute('id', 'svgEl');
-    svg.setAttribute('viewBox', `0 0 ${width} ${height + 275}`);
+    svg.setAttribute('viewBox', `0 0 ${width} ${height + 400}`);
     svg.innerHTML = shape.getTemplate();
 
     this.renderer2.appendChild(this.overlayContainer.nativeElement, svg);

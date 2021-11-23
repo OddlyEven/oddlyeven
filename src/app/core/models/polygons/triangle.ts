@@ -1,7 +1,7 @@
 import { Shapes } from '../../constants/shapes';
-import { Shape } from './shape';
+import { ShapeBase } from './shape-base';
 
-export class Triangle extends Shape {
+export class Triangle extends ShapeBase {
   public constructor(shapeSize: number) {
     super(Shapes.triangle, shapeSize);
   }
@@ -10,7 +10,7 @@ export class Triangle extends Shape {
     const { width, height } = this.screenSize;
 
     const xCount = Math.ceil(width / this.shapeSize) + 1;
-    const yCount = Math.ceil(height / (this.shapeSize / 1.25));
+    const yCount = Math.ceil(height / (this.shapeSize / 1.35));
 
     const halfSize = this.shapeSize / 2;
 

@@ -1,7 +1,7 @@
 import { Shapes } from '../../constants/shapes';
-import { Shape } from './shape';
+import { ShapeBase } from './shape-base';
 
-export class Hexagon extends Shape {
+export class Hexagon extends ShapeBase {
   public constructor(shapeSize: number) {
     super(Shapes.hexagon, shapeSize);
   }
@@ -9,11 +9,14 @@ export class Hexagon extends Shape {
   public getTemplate(): string {
     const { width, height } = this.screenSize;
 
-    const c = this.shapeSize;
+    const c = this.shapeSize / 2;
     const a = c / 2;
     const b = Math.sqrt(Math.pow(c, 2) - Math.pow(a, 2));
 
-    const screenTemplate = [...Array(Math.ceil(height / b)).keys()]
+    const xCount = Math.ceil(width / (2 * c));
+    const yCount = Math.ceil(height / a);
+
+    const screenTemplate = [...Array(yCount).keys()]
       .map((y) => {
         const y1 = (y * b) - b;
         const y2 = y1 + b;
@@ -21,7 +24,7 @@ export class Hexagon extends Shape {
 
         const xOffset = a * (y % 2) * -3;
 
-        return [...Array(Math.ceil(width / (2 * c))).keys()]
+        return [...Array(xCount).keys()]
           .map((x) => {
             const x2 = (x * (3 * c)) + xOffset;
             const x1 = x2 + a;

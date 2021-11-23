@@ -1,2 +1,51 @@
-// https://upload.wikimedia.org/wikipedia/commons/6/66/Regular_octagon.svg
-// <polygon xmlns="http://www.w3.org/2000/svg" style="fill:none;stroke:#000000;stroke-width:2.5px" points="136.737609507049,188.692435121084 63.2623904929514,188.692435121084 11.3075648789165,136.737609507049 11.3075648789165,63.2623904929514 63.2623904929513,11.3075648789165 136.737609507049,11.3075648789165 188.692435121084,63.2623904929513 188.692435121084,136.737609507049"/>
+import { Shapes } from '../../constants/shapes';
+import { ShapeBase } from './shape-base';
+
+export class Octagon extends ShapeBase {
+  public constructor(shapeSize: number) {
+    super(Shapes.octagon, shapeSize);
+  }
+
+  public getTemplate(): string {
+    const { width, height } = this.screenSize;
+
+    const a = this.shapeSize / 3;
+    const c = Math.sqrt(Math.pow(a, 2) + Math.pow(a, 2));
+    const diameter = a + a + c;
+
+    const xCount = Math.ceil(width / diameter);
+    const yCount = Math.ceil(height / c);
+
+    const screenTemplate = [...Array(yCount).keys()]
+      .map((y) => {
+        const y1 = (y * a) + (y * diameter / 2.5) - c;
+        const y2 = y1 + a;
+        const y3 = y2 + c;
+        const y4 = y3 + a;
+
+        const xOffset = (y % 2) * (c + a);
+
+        return [...Array(xCount).keys()]
+          .map((x) => {
+            const x2 = (x * (diameter + c)) - xOffset;
+            const x1 = x2 + a;
+            const x3 = x1 + c;
+            const x4 = x3 + a;
+
+            return this.createShapeTemplate(
+              { x: x1, y: y1 },
+              { x: x2, y: y2 },
+              { x: x2, y: y3 },
+              { x: x1, y: y4 },
+              { x: x3, y: y4 },
+              { x: x4, y: y3 },
+              { x: x4, y: y2 },
+              { x: x3, y: y1 },
+            );
+          }).join('');
+      }
+      );
+
+    return screenTemplate.join('');
+  }
+}

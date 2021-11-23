@@ -2,7 +2,7 @@ import { Shapes } from '../../constants/shapes';
 import { Point } from '../../interfaces/point';
 import { ScreenSize } from '../../interfaces/screen-size';
 
-export abstract class Shape {
+export abstract class ShapeBase {
   private readonly animateElTemplate = 'animate attributeType="CSS" attributeName="fill" values="violet;indigo;blue;green;yellow;orange;red;violet" begin="mouseenter" dur="500ms"></animate';
   private readonly polygonElAttrs = 'stroke="rgba(10,10,10)" fill="rgb(20,20,20)" stroke-opacity="1" stroke-width="0.75" fill-opacity="1" onmousemove="if (event.buttons > 0) {this.style.fillOpacity = 0; this.style.strokeOpacity = 0.1; this.animate = null;}"';
 

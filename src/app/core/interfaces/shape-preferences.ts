@@ -5,7 +5,7 @@ export class ShapePreferences {
   public size: number;
 
   public constructor() {
-    this.shape = Shapes.hexagon;
-    this.size = 30;
+    this.shape = Shapes.diamond;
+    this.size = 50;
   }
 }
