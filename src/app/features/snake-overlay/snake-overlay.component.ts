@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, Input, Renderer2, SimpleChange, ViewChild } from '@angular/core';
 import { ShapePreferences } from 'src/app/core/interfaces/shape-preferences';
-import { ShapeService } from 'src/app/core/services/shape.service';
+import { ShapeFactoryService } from 'src/app/core/services/shape-factory.service';
 
 @Component({
   selector: 'app-snake-overlay',
@@ -12,7 +12,7 @@ export class SnakeOverlayComponent implements AfterViewInit {
 
   @ViewChild('overlayContainer') private overlayContainer!: { nativeElement: any; };
 
-  public constructor(private readonly shapeSvc: ShapeService, private readonly renderer2: Renderer2) {
+  public constructor(private readonly shapeSvc: ShapeFactoryService, private readonly renderer2: Renderer2) {
   }
 
   public ngAfterViewInit(): void {

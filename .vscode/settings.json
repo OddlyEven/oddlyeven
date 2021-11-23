@@ -1,14 +1,2 @@
 {
-  // Editor
-  // "editor.formatOnSave": true,
-  // "editor.tabSize": 2,
-  // "editor.suggest.insertMode": "insert",
-  // "editor.defaultFormatter": "esbenp.prettier-vscode",
-  // "[html]": {
-  //   "editor.defaultFormatter": "vscode.html-language-features"
-  // },
-  // "[typescript]": {
-  //   "editor.defaultFormatter": "vscode.typescript-language-features"
-  // },
-  // "json.schemaDownload.enable": false,
 }

@@ -1,16 +1,18 @@
+import { Shapes } from '../../constants/shapes';
 import { Shape } from './shape';
 
 export class Triangle extends Shape {
   public constructor(shapeSize: number) {
-    super('triangle', shapeSize);
+    super(Shapes.triangle, shapeSize);
   }
 
   public getTemplate(): string {
     const { width, height } = this.screenSize;
 
-    const halfSize = this.shapeSize / 2;
     const xCount = Math.ceil(width / this.shapeSize) + 1;
     const yCount = Math.ceil(height / (this.shapeSize / 1.25));
+
+    const halfSize = this.shapeSize / 2;
 
     const screenTemplate = [...Array(yCount).keys()]
       .map((y) => {

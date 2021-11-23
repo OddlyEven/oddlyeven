@@ -1,15 +1,17 @@
+import { Shapes } from '../../constants/shapes';
 import { Shape } from './shape';
 
 export class Diamond extends Shape {
   public constructor(shapeSize: number) {
-    super('diamond', shapeSize);
+    super(Shapes.diamond, shapeSize);
   }
 
   public getTemplate(): string {
     const { width, height } = this.screenSize;
-    const halfSize = this.shapeSize / 2;
     const xCount = Math.ceil(width / this.shapeSize) + 1;
     const yCount = Math.ceil(height / (this.shapeSize / 2.6));
+
+    const halfSize = this.shapeSize / 2;
 
     const screenTemplate = [...Array(yCount).keys()]
       .map((y) => {

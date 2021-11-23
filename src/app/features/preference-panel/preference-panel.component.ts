@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, EventEmitter, Input, Output } from '@angular/core';
-import { Shapes } from 'src/app/core/constants/shapes';
+import { Enum, Shapes } from 'src/app/core/constants/shapes';
 import { ShapePreferences } from 'src/app/core/interfaces/shape-preferences';
 
 @Component({
@@ -12,7 +12,7 @@ export class PreferencePanelComponent implements AfterViewInit {
   @Input() isVisible = true;
   @Output() preferenceChange = new EventEmitter<ShapePreferences>();
 
-  public shapes = ['diamond', 'triangle'];
+  public shapes = Enum.names(Shapes);
   public sizeRange = [...Array(13).keys()].map((key) => (key + 3) * 10);
   public selectedShape!: Shapes;
   public selectedSize!: number;

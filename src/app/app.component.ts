@@ -7,11 +7,10 @@ import { ShapePreferences } from './core/interfaces/shape-preferences';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  public shapePreferences: ShapePreferences = { shape: 'diamond', size: 60 };
+  public shapePreferences = new ShapePreferences();
   public showPrefPanel = true;
 
   public preferenceChanged(preferences: ShapePreferences) {
-    console.log('show', this.showPrefPanel);
     this.shapePreferences = { ...preferences };
   }
 }

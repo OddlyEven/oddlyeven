@@ -1,6 +1,11 @@
 import { Shapes } from "../constants/shapes";
 
-export interface ShapePreferences {
-  shape: Shapes;
-  size: number;
+export class ShapePreferences {
+  public shape: Shapes;
+  public size: number;
+
+  public constructor() {
+    this.shape = Shapes.hexagon;
+    this.size = 30;
+  }
 }

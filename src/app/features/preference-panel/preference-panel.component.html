@@ -9,7 +9,7 @@
   <div class="form-group">
     <label for="size-selector">Size:</label>
     <select id="size-selector" [value]="selectedSize" (change)="sizeSelected($event)">
-      <option *ngFor="let n of sizeRange">{{ n }}</option>
+      <option *ngFor="let size of sizeRange">{{ size }}</option>
     </select>
   </div>
 
