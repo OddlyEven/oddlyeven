@@ -17,8 +17,8 @@
   Today, my skill set spans an array of technologies anywhere from legacy systems to the latest and greatest.
 </p>
 <p>
-  You can browse a comprehensive list of my experience on <a href="https://www.linkedin.com/in/seanstreetmcp/" target="_blank">LinkedIn</a>.
+  You can browse a comprehensive list of my experience on <a href="https://www.linkedin.com/in/seanstreetmcp/" target="blank">LinkedIn</a>.
 </p>
 <p>
-  Or view my website at <a href="http://www.oddlyeven.org/" target="_blank">www.oddlyeven.org</a>.
+  Or view my website at <a href="http://www.oddlyeven.org/" target="blank">www.oddlyeven.org</a>.
 </p>
