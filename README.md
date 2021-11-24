@@ -1,4 +1,4 @@
-[![Banner for OddlyEven](https://github.com/OddlyEven/oddlyeven/blob/main/src/assets/banner.png)](http://www.oddlyeven.org)
+[![Banner for OddlyEven](https://github.com/OddlyEven/oddlyeven/blob/main/src/assets/oddlyeven-banner.gif)](http://www.oddlyeven.org)
 
 # Oddlyeven
 
