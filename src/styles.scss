@@ -37,26 +37,39 @@ header {
   }
 }
 
+.panel {
+  padding: 16px;
+  border-radius: 8px;
+}
+
 .flex-bottom {
   display: flex;
   flex-direction: column;
   height: 100%;
   justify-content: flex-end;
+  margin-top: 24px;
 }
 
 .form-group {
   display: flex;
   flex-direction: row;
+  align-items: center;
   margin: 12px 0;
 
   label {
     margin-right: 8px;
     text-align: right;
     flex: 1;
+    white-space: nowrap;
   }
 
-  input,
-  select {
-    flex: 3;
+  .control {
+    flex: 2;
   }
+}
+
+.sub-label {
+  font-size: smaller;
+  font-weight: bolder;
+  color: rgb(46, 2, 241);
 }

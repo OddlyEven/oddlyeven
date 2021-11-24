@@ -1,16 +1,20 @@
-<div *ngIf="isVisible" class="pref-panel-container dark-background flex-col">
+<div *ngIf="isVisible" class="pref-panel-container flex-col panel dark-background">
   <div class="form-group">
     <label for="shape-selector">Shape:</label>
-    <select id="shape-selector" [value]="selectedShape" (change)="shapeSelected($event)">
+    <select id="shape-selector" [value]="preferences.shape" (change)="shapeSelected($event)" class="control">
       <option *ngFor="let shape of shapes">{{ shape }}</option>
     </select>
   </div>
 
   <div class="form-group">
-    <label for="size-selector">Size:</label>
-    <select id="size-selector" [value]="selectedSize" (change)="sizeSelected($event)">
-      <option *ngFor="let size of sizeRange">{{ size }}</option>
-    </select>
+    <label for="size-selector">Size <span class="sub-label">({{preferences.size}})</span>:</label>
+    <div class="control">
+      <input type="range" min="30" max="150" step="10" list="tickmarks" [value]="preferences.size"
+        [title]="preferences.size" (change)="sizeSelected($event)">
+      <datalist id="tickmarks">
+        <option *ngFor="let size of sizeRange" [value]="size" [label]="size"></option>
+      </datalist>
+    </div>
   </div>
 
   <div class="flex-bottom">
